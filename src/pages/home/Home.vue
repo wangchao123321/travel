@@ -1,12 +1,17 @@
 <template>
   <div>
-    hello word
+    <home-header></home-header>
   </div>
 </template>
 
 <script>
+  import HomeHeader from './compoments/Header'
   export default {
-    name: "Home"
+    components: {HomeHeader},
+    name: "Home",
+    comments: {
+      HomeHeader
+    }
   }
 </script>
 

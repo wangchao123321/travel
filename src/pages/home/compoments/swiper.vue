@@ -1,32 +1,49 @@
 <template>
-  <swiper :options="swiperOption">
-    <!-- slides -->
-    <swiper-slide>I'm Slide 1</swiper-slide>
-    <swiper-slide>I'm Slide 2</swiper-slide>
-    <swiper-slide>I'm Slide 3</swiper-slide>
-    <swiper-slide>I'm Slide 4</swiper-slide>
-    <swiper-slide>I'm Slide 5</swiper-slide>
-    <swiper-slide>I'm Slide 6</swiper-slide>
-    <swiper-slide>I'm Slide 7</swiper-slide>
-    <!-- Optional controls -->
-    <div class="swiper-pagination"  slot="pagination"></div>
-    <div class="swiper-button-prev" slot="button-prev"></div>
-    <div class="swiper-button-next" slot="button-next"></div>
-    <div class="swiper-scrollbar"   slot="scrollbar"></div>
-  </swiper>
+  <div class="wrapper">
+    <swiper :options="swiperOption">
+      <swiper-slide v-for="item of swiperList" :key="item.id">
+        <img class="swiper-img" :src="item.imgUrl"/>
+      </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
+    </swiper>
+  </div>
 </template>
 
 <script>
   export default {
     name: 'HomeSwiper',
-    data(){
+    data (){
       return {
-        swiperOption: {}
+        swiperOption: {
+          pagination: '.swiper-pagination',
+          loop: true
+        },
+        swiperList: [{
+          id: '0001',
+          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1808/8a/1957a0fb58ad0402.jpg_750x200_e72b8c0f.jpg'
+        },{
+          id: '0001',
+          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1807/40/1d7be74ed1584002.jpg_750x200_c41233c9.jpg'
+        }]
       }
     }
   }
 </script>
 
 <style lang="styles" scoped>
+  .swiper-img {
+    width: 100%;
+  }
 
+  .wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    padding-bottom: 31.25%;
+    background: #eee;
+  }
+
+  .wrapper >>> .swiper-pagination-bullet-active{
+    background: #fff !important;
+  }
 </style>

@@ -30,7 +30,7 @@
   }
 </script>
 
-<style lang="styles" scoped>
+<style lang="stylus" scoped>
   .swiper-img {
     width: 100%;
   }

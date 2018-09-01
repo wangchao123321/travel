@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div>
           <img class="item-img" :src="item.imgUrl"/>
         </div>
@@ -18,35 +18,8 @@
 <script>
  export default {
    name: 'HomeRecommend',
-   data (){
-     return {
-       recommendList: [{
-         id: '0001',
-         imgUrl: 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_140x140_73fda71d.jpg',
-         title: '大连海鲜世界',
-         desc: '海洋主题'
-       },{
-         id: '0002',
-         imgUrl: 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_140x140_73fda71d.jpg',
-         title: '大连海鲜世界',
-         desc: '海洋主题'
-       },{
-         id: '0003',
-         imgUrl: 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_140x140_73fda71d.jpg',
-         title: '大连海鲜世界',
-         desc: '海洋主题'
-       },{
-         id: '0004',
-         imgUrl: 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_140x140_73fda71d.jpg',
-         title: '大连海鲜世界',
-         desc: '海洋主题'
-       },{
-         id: '0005',
-         imgUrl: 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_140x140_73fda71d.jpg',
-         title: '大连海鲜世界',
-         desc: '海洋主题'
-       },]
-     }
+   props: {
+     list: Array
    }
  }
 </script>
